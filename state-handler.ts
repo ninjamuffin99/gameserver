@@ -7,6 +7,15 @@ export class Player extends Schema {
 
     @type("number")
     y = Math.floor(Math.random() * 400);
+
+    @type("number")
+    velX = Math.floor(Math.random() * 400);
+
+    @type("number")
+    velY = Math.floor(Math.random() * 400);
+
+    @type('string')
+    name = "TestName";
 }
 
 export class State extends Schema {
@@ -25,10 +34,10 @@ export class State extends Schema {
 
     movePlayer (id: string, movement: any) {
         if (movement.x) {
-            this.players[ id ].x += movement.x * 10;
+            this.players[ id ].x += movement.x;
 
         } else if (movement.y) {
-            this.players[ id ].y += movement.y * 10;
+            this.players[ id ].y += movement.y;
         }
     }
 }
