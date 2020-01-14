@@ -34,10 +34,10 @@ export class State extends Schema {
 
     movePlayer (id: string, movement: any) {
         if (movement.x) {
-            this.players[ id ].x += movement.x;
+            this.players[ id ].x = movement.x * 20;
 
         } else if (movement.y) {
-            this.players[ id ].y += movement.y;
+            this.players[ id ].y = movement.y * 20;
         }
     }
 }
